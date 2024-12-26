@@ -89,9 +89,10 @@ class HomePage extends StatelessWidget {
                           blur: 20,
                           borderRadius: BorderRadius.circular(25),
                           // color: Colors.white,
-                          // child: const Image(
-                          //   image: AssetImage("lib/assets/images/abhi.jpg"),
-                          // ),
+                          child: const Image(
+                            image: AssetImage("lib/assets/images/my.png"),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       SizedBox(
