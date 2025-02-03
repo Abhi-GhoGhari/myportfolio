@@ -1,4 +1,5 @@
 import 'package:myportfolio/headers.dart';
+import 'package:url_launcher/link.dart';
 
 class Contectus extends StatelessWidget {
   const Contectus({super.key});
@@ -57,6 +58,13 @@ class Contectus extends StatelessWidget {
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 20,
+                            color: Colors.white70,
+                            offset: Offset(2, 2),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -214,6 +222,24 @@ class Contectus extends StatelessWidget {
                     ),
                   ),
                 ),
+                // Link(
+                //   uri: Uri.parse(
+                //       "https://www.linkedin.com/in/abhi-ghoghari-0346782b6/"),
+                //   builder: (context, followLink) => FilledButton(
+                //     onPressed: followLink,
+                //     style: ButtonStyle(
+                //       backgroundColor: MaterialStateProperty.all(
+                //         const Color(0xffFFBF78),
+                //       ),
+                //     ),
+                //     child: const Text(
+                //       "Preview",
+                //       style: TextStyle(
+                //         color: Colors.black,
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

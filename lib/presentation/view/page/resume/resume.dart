@@ -1,7 +1,8 @@
-import 'package:myportfolio/headers.dart';
+import 'package:flutter/material.dart';
+import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 
-class Aboutme extends StatelessWidget {
-  const Aboutme({super.key});
+class Resume extends StatelessWidget {
+  const Resume({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,6 +10,7 @@ class Aboutme extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
+        centerTitle: true,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -52,11 +54,11 @@ class Aboutme extends StatelessWidget {
                       );
                     },
                     child: const Text(
-                      "ABOUT ME",
+                      "MY RESUME",
                       style: TextStyle(
-                        color: Colors.white,
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                         shadows: [
                           Shadow(
                             blurRadius: 20,
@@ -68,50 +70,30 @@ class Aboutme extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: size.height * 0.05),
+                GlassContainer(
+                  height: size.height * 0.8,
+                  width: double.infinity,
+                  blur: 10,
+                  shadowColor: Colors.white,
+                  shadowStrength: 2,
+                  child: const Image(
+                    image: AssetImage("lib/assets/images/s-1.png"),
+                    fit: BoxFit.fill,
+                  ),
+                ),
                 SizedBox(height: size.height * 0.02),
                 GlassContainer(
-                  height: size.height * 0.35,
-                  width: size.width * 0.65,
-                  borderRadius: BorderRadius.circular(600),
-                  blur: 20,
+                  height: size.height * 0.8,
+                  width: double.infinity,
+                  blur: 10,
+                  shadowColor: Colors.white,
+                  shadowStrength: 2,
                   child: const Image(
-                    image: AssetImage("lib/assets/images/my.png"),
-                    fit: BoxFit.cover,
+                    image: AssetImage("lib/assets/images/s-2.png"),
+                    fit: BoxFit.fill,
                   ),
                 ),
-                SizedBox(height: size.height * 0.02),
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "'Welcome 👋'",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(height: size.height * 0.02),
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "' HI.. , I am flutter application developer  ABHI GHOGHARI I have done many flutter application development projects. Like a Chat Functionality App,Gemini AI App, Show a Current City Weather Data App,API based App etc.. Application made by myself '",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(height: size.height * 0.21),
-                const Text(
-                  "Thankyou",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                )
               ],
             ),
           ),

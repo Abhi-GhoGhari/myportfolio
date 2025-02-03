@@ -1,5 +1,7 @@
 import 'package:myportfolio/headers.dart';
 import 'package:myportfolio/utils/route_utils.dart';
+import 'package:myportfolio/utils/websitelink_utils.dart';
+import 'package:url_launcher/link.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,7 +17,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: size.height * 0.1,
+              height: size.height * 0.12,
             ),
             TextButton(
               onPressed: () {
@@ -41,6 +43,21 @@ class HomePage extends StatelessWidget {
               },
               child: const Text(
                 "Contact us",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.instance.resume,
+                );
+              },
+              child: const Text(
+                "My Resume",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -85,7 +102,7 @@ class HomePage extends StatelessWidget {
                 parent: AlwaysScrollableScrollPhysics(),
               ),
               children: [
-                Container(
+                SizedBox(
                   height: size.height * 0.8,
                   width: size.width * 0.3,
                   // blur: 10,
@@ -148,22 +165,36 @@ class HomePage extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: GlassContainer(
                           height: size.height * 0.06,
-                          width: size.width * 0.5,
+                          width: size.width * 0.55,
                           blur: 25,
                           borderRadius: BorderRadius.circular(13),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Container(
-                                height: size.height * 0.04,
-                                width: size.width * 0.08,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.white,
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        "lib/assets/logo/github.png"),
-                                    fit: BoxFit.cover,
+                              GestureDetector(
+                                onTap: () {
+                                  // launchmyurl(
+                                  //   myurl,
+                                  // );
+                                  Link(
+                                    uri: Uri.parse(""),
+                                    builder: (context, followLink) {
+                                      return Container();
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  height: size.height * 0.04,
+                                  width: size.width * 0.08,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.white,
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        "lib/assets/logo/github.png",
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -210,7 +241,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: size.height * 0.1),
+                      SizedBox(height: size.height * 0.08),
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(
@@ -231,7 +262,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: size.height * 0.8,
                   width: size.width * 0.3,
                   // color: Colors.white,
@@ -274,7 +305,7 @@ class HomePage extends StatelessWidget {
                             "years of experience in this field\nand To take up new projects of\nFlutter application to complete\nthese projects, to keep clients\n"
                             "happy,\n'Clients are happy, we are happy'",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               // color: Color(0xffFFEDD8),
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -340,7 +371,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: size.height * 0.8,
                   width: size.width * 0.3,
                   child: Column(
@@ -418,7 +449,9 @@ class HomePage extends StatelessWidget {
                               const Text(
                                 "I design beautiful and attractive app interface with using Figma.",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
                               ),
                             ],
                           ),
@@ -427,7 +460,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: size.height * 0.8,
                   width: size.width * 0.3,
                   child: Column(
@@ -517,20 +550,26 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  FilledButton(
-                                    onPressed: () {},
-                                    style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all(
-                                        const Color(0xffFFBF78),
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      "Preview",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                    ),
+                                  Link(
+                                    uri: Uri.parse(
+                                        "https://www.linkedin.com/in/abhi-ghoghari-0346782b6/"),
+                                    builder: (context, followLink) {
+                                      return FilledButton(
+                                        onPressed: () {},
+                                        style: ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStateProperty.all(
+                                            const Color(0xffFFBF78),
+                                          ),
+                                        ),
+                                        child: const Text(
+                                          "Preview",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ],
                               ),
@@ -592,7 +631,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: size.height * 0.3,
                   width: size.width * 0.3,
                   child: Column(
